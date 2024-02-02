@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+<div class="container" id="full">
+  <div>
+    <p style="font-size: 40px;margin-bottom: 5px;font-weight: 800;">Stay updated!</p>
+    <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    <ul>
+      <li><img src="assets/images/icon-list.svg" alt="list" height="14px" width="14px" style="margin-right: 10px;">Product discovery and building what matters</li>
+      <li><img src="assets/images/icon-list.svg" alt="list" height="14px" width="14px" style="margin-right: 10px;">Measuring to ensure updates are a success</li>
+      <li><img src="assets/images/icon-list.svg" alt="list" height="14px" width="14px" style="margin-right: 10px;">And much more!</li>
+    </ul>
+    <form name="nform" onsubmit=" return change()">
+      <label>Email address</label><br>
+      <input type="email" name="mail" placeholder="email@company.com">
+      <button>Subscribe to monthly newsletter</button>
+    </form>
+  </div>
+  <img src="assets/images/illustration-sign-up-desktop.svg" alt="sign-up" height="90%" width="40%" style="margin-right: 20px;">
+</div>
+</body>
+<script>
+  const doc=document.getElementById('full');
+  function change()
+  {
+    let mail = document.forms["nform"]["mail"].value;
+    document.body.innerHTML=`<div class="success">
+      <img src="assets/images/icon-success.svg" alt="succ" height="40px" width="40px">
+      <h2>Thanks for subscribing!</h2>
+      <p style="font-size: 12px;margin-top: 0px;">A confirmation email has been sent to ash@loremcompany.com Please open it and click the button inside to confirm your subscription.</p>
+      <button>Dismiss message</button>
+  </div>`
+
+  }
+</script>
+</html>
